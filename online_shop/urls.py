@@ -18,7 +18,11 @@ from .views import *
 
 urlpatterns = [
     path('', Home.as_view(), name='home'),
+    path('productadd', AddProduct.as_view(), name='product_add'),
+    path('register/', UserRegister.as_view(), name="reg"),
+    path('login/', LoginUser.as_view(), name="login"),
+    path('logout/', logout_user, name='logout'),
     path('<slug:slug_cat>/<slug:slug_product>/', ProductShow.as_view(), name='show_products'),
     path('<slug:slug_cat>/', CategoryShow.as_view(), name='show_cat'),
-    path('addproduct/', AddProduct.as_view, name='add_prod'),
+    
 ]

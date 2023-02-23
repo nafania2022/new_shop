@@ -3,8 +3,8 @@
 
 {% block price %}
 <main>
-    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-        {% for p in products  %}
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center"> 
+{% for p in products  %}
         <div class="col">
             <div class="card mb-4 rounded-3 shadow-sm">
                 <div class="card-header py-3">
@@ -16,12 +16,11 @@
                         <li>{{p.description}}</li>                       
                     </ul>
             <a href="{{p.get_absolute_url}}" type="button" class="w-100 btn btn-lg btn-outline-primary">Подробнее</a>
-          </div>
+                </div>
+            </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
 </main>
-
 
 {% endblock price %}
