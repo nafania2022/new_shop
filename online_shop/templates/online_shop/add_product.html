@@ -1,0 +1,22 @@
+{% extends 'online_shop/base.html' %}
+
+
+{% block price %}
+<div class="container mt-5">
+    <div class=" row">
+        <div class=" col-5 offset-1">
+            <form action="" method = "post">  
+                {% csrf_token %}
+                <div class="row">
+                    {% for f in form  %}
+                    <label for="{{f.id_for_lable}}">{{f.label}}</label>
+                    {{f}}
+                    {{f.errors}}
+                </div>                            
+                {% endfor %}
+            </form>
+        </div>                            
+    </div>                            
+</div>                            
+
+{% endblock price %}
